@@ -1,6 +1,3 @@
 libsndfile1
 libsndfile-dev
-libav-tools
-libavcodec-extra-53 
-libavcodec-extra-53
-ffmpeg 
+ffmpeg
