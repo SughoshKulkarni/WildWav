@@ -13,23 +13,141 @@
 </head>
 
 <body>
- <div class="login">
-	<h1>Bird Predictor</h1>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>
+                <center>  Bird Sound Identifier </center>
+            </h1>
+        </div>
+    </div>
 
-<form action="{{ url_for('prediction')}}"method="post" enctype="multipart/form-data">
+    <center> <div class="container">
+       <canvas id="analyser" style="width:50%;height:200px;background-color: black" width="1024" height="500"></canvas>
+        <p><p>
+            <button id="init" class="button button3" onclick="unpause()">Start listening</button>
+            <button id="start" class="button button4" onclick="startRecording()" disabled>Start</button>
+            <button id="stop" class="button button5" onclick="stopRecording()" disabled>Stop</button>
+    </div>
+    
+    <div style="width:50%; margin:auto;">
+  <div style="display:inline-block; width:45%;text-align:center;">
+    <form action="{{ url_for('predict')}}"method="post" enctype="multipart/form-data">
     <input type=file name=file>  </center>
     <br>
-    <center>
-    <button type="submit" class="button button1">Prediction</button>
+    <center><p>
+    {% with errors = get_flashed_messages(category_filter=["error"]) %}
+    {% if errors %}
+        {%- for msg in errors %}
+        {{ msg }}
+        {% endfor -%}
+    {% endif %}
+    {% endwith %}
+    </p></center>
+
+   
+
+   <center> 
+   <button type="submit" class="button button1">Predict</button>
+   
+   </center>
+   </form>
+
+   <center>
+   <form action="{{ url_for('index')}}"method="post">
+   <button type="submit" class="button button2">Refresh</button> </form> 
+   </center>
+</div>
+</div>
+
+    <center> 
+    <h1 style="font-size:200%"; "color:blue";>     
+    <p>
+    {% with info = get_flashed_messages(category_filter=["info"]) %}
+    {% if info %}
+        {%- for msg in info %}
+        {{ msg }}
+        {% endfor -%}
+    {% endif %}
+    {% endwith %}
+    </p> 
+    <h1>
     </center>
-</form>
-	 
-   <br>
-   <br>
-   {{ prediction_text }}
+  
+  <br>
+  <br><br><br><br>
 
- </div>
+   <style>
+.button {
+  border: none;
+  color: white;
+  padding: 12px 55px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
 
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #AA55FF;
+}
+
+.button1:hover {
+  background-color: #AA55FF;
+  color: white;
+}
+
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  background-color: white;
+  color: black;
+  border: 2px solid #557FFF;
+}
+
+.button3:hover {
+  background-color: #557FFF;
+  color: white;
+}
+
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #28A745;
+}
+
+.button4:hover {
+  background-color: #28A745;
+  color: white;
+}
+
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #FF0000;
+}
+
+.button5:hover {
+  background-color: #FF0000;
+  color: white;
+}
+</style>
+    <script src="{{ url_for('static', filename='recorder.js') }}"></script>
+    <script src="{{ url_for('static', filename='audiodisplay.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 
 </body>
 </html>
