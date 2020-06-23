@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+  <style>
+body  {
+  background-image: url("https://lh3.googleusercontent.com/Dyxs8Cy9L7K5vfBi5DOI2Qv6FuX2XHUQpTxfKJZz_3qo3w3IAr-0D3EQC9p-zbZSHvqQgx9XwoPpVMIjmMfN2GHXBHYbk972IwHzCqJz6ah3H3r8ZYGeUaB3UZ6ikyDxrRw4FBnvJA=w2400");
+  background-position: center center;
+  background-color: #175F77;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover
+}
+</style>
+<style>
+#myDIV {
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  align: center;
+  background-color: rgba(4, 43, 76, 0.5);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  min-width: 300px;
+  display: none;
+}
+</style>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 style="color:white;font-size:2vw;font-family:Brush Script MT;">
+               <center> <a href="https://sughoshk.com"><img src="https://lh3.googleusercontent.com/9H6UYO3otUiWptObzACYKwonhAh6G6vfUsmleFcFmoodE4pMWbj1HY7s5d_VrBJvsWBw46-WO4ytG1KpDnwyKKmj_5pZuzMx3gZAm0PLjqFyfKj6mDV_0xie4DLWqHRewXlDad11bQ=w2400" alt="Wild-Wav-Logo-White" border="0" style="width:35%;min-width: 300px"></a> </center>
+           
+                <center>Bird Sound Identifier</center>
+            </h1>
+        </div>
+    </div>
+
+    <center> 
+    <div class="container">
+       <canvas id="analyser" style="width:35%;height:160px;background-color: rgba(4, 43, 76, 0.5);border-radius: 12px;min-width: 300px" width="1024" height="500"></canvas>
+        <p>
+        <!--    <button id="init" class="button button3" onclick="unpause()">Start listening</button> -->
+        <div id="init">  <button id="start" class="button button4" onclick="unpause();startRecording()">RECORD</button> </div>
+                         <button id="stop" class="button button5" onclick="stopRecording()">STOP</button>
+                        
+       </div>
+     <button class="button button3" onclick="myFunction()">BROWSE FILE</button>
+     <script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+       
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+    
+
+    <div style="width:50%; margin:auto;">
+    <div style="display:inline-block; width:45%;text-align:center;">
+    <div id="myDIV">  <center> <form action="{{ url_for('predict')}}"method="post" enctype="multipart/form-data">
+    <input type=file name=file> </center></div>
+    </center>
+    
+ 
+
+   <center> 
+   <button type="submit" class="button button1">PREDICT</button>
+   
+   </center>
+   </form>
+
+   <center>
+   <form action="{{ url_for('index')}}"method="post">
+   <button type="submit" class="button button2">REFRESH</button> </form> 
+   </center>
+</div>
+</div>
+
+    <center>
+    <h1 style="font-size:225%;color: white;background-color: rgba(238, 98, 107,0.8);font-family:Helvetica">
+    {% with errors = get_flashed_messages(category_filter=["error"]) %}
+    {% if errors %}
+        {%- for msg in errors %}
+        {{ msg }}
+        {% endfor -%}
+    {% endif %}
+    {% endwith %}
+    
+    </h1>
+    </center>
+    
+    <center> 
+    <h1 style="font-size:225%;color: white;background-color: rgba(6, 22, 47,0.8);font-family:Helvetica">     
+    
+    {% with info = get_flashed_messages(category_filter=["info"]) %}
+    {% if info %}
+        {%- for msg in info %}
+        {{ msg }}
+        {% endfor -%}
+    {% endif %}
+    {% endwith %}
+     
+    </h1>
+    </center>
+  
+  <br>
+  <br><br><br><br>
+   <style>
+.button {
+  border: none;
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 15px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  outline:none;
+}
+
+.button1 {
+  border-radius: 12px;
+  padding: 15px 38px;
+  background-color: rgba(4, 37, 74);
+  color: white;
+  border: 2px solid #04254A;
+}
+
+.button1:hover {
+  background-color: #06376D;
+    border: 2px solid #06376D;
+  color: white;
+}
+
+.button2 {
+  border-radius: 12px;
+  padding: 15px 34px;
+  background-color: rgba(55, 78, 103, 0.8);
+  color: white;
+  border: 2px solid #374E67;
+}
+
+.button2:hover {
+  background-color: #374E67;
+  color: white;
+}
+
+.button3 {
+  border-radius: 12px;
+  padding: 15px 18px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  border: 2px solid #9355B3;
+}
+
+.button3:hover {
+  background-color: #9355B3;
+  color: white;
+  
+}
+
+.button4 {
+  border-radius: 12px;
+  padding: 15px 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  border: 2px solid #07A261;
+}
+
+.button4:hover {
+  background-color: #07A261;
+  color: white;
+}
+
+.button5 {
+  border-radius: 12px;
+  padding: 15px 55px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  border: 2px solid #DE4A57;
+
+}
+
+.button5:hover {
+  background-color: #DE4A57;
+  color: white;
+}
+
+.button5:active {
+  background-color: #DE4A57;
+  color: white;
+}
+
+.button5:focuss {
+  background-color: #DE4A57;
+  color: white;
+}
+</style>
+    <script src="{{ url_for('static', filename='recorder.js') }}"></script>
+    <script src="{{ url_for('static', filename='audiodisplay.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+<footer>
+  <CENTER><a href="https://www.sughoshk.com"> <img src="https://lh3.googleusercontent.com/9H6UYO3otUiWptObzACYKwonhAh6G6vfUsmleFcFmoodE4pMWbj1HY7s5d_VrBJvsWBw46-WO4ytG1KpDnwyKKmj_5pZuzMx3gZAm0PLjqFyfKj6mDV_0xie4DLWqHRewXlDad11bQ=w2400" alt="Wild-Wav-Logo-Footer" border="0" style="width:5%;min-width: 90px" /> </a>
+  <a href="mailto:svpp.projects@gmail.com" style="color:white;text-decoration:none;font-family:Helvetica;font-size:92%"> | Contact Us</a></CENTER>
+</footer>
+
+
+</body>
+</html>
