@@ -29,3 +29,4 @@ SoundFile==0.10.3.post1
 Werkzeug==1.0.0
 wincertstore==0.2
 pandas==1.0.1
+pathlib==1.0.1
