@@ -15,6 +15,9 @@ model = pickle.load(open('Bird Predictor_neural.pkl', 'rb'))
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    if Path('tmp/audio.wav').is_file():
+        Path('tmp/audio.wav').unlink()
+        return render_template('index.html')
     return render_template('index.html')
 
 def allowed_file(f):
