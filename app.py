@@ -15,10 +15,11 @@ model = pickle.load(open('Bird Predictor_neural.pkl', 'rb'))
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    bird_path = ''
     if Path('tmp/audio.wav').is_file():
         Path('tmp/audio.wav').unlink()
-        return render_template('index.html')
-    return render_template('index.html')
+        return render_template('index.html', bird = bird_path)
+    return render_template('index.html', bird = bird_path)
 
 def allowed_file(f):
     return '.' in f and \
@@ -55,11 +56,17 @@ def predict():
             Path('tmp/audio.wav').unlink()
             if max_prob>0.7:
                 output = prediction[0]
+                if output == 'Cardinal':
+                    bird_path = 'https://lh3.googleusercontent.com/PEG9lMQ7ISPsUw006C_dohFR8drduw2FKKA41IYOOvUkDNPpdvBZAb5yQYEk-1whDrpED7J3Qbcmxlr8T99tzZfW7cK6yXXBDzvwAUXoY0C0J9Y3eZ6OrhkAOyGAORgo210GFWMh7w=w2400'
+                if output == 'Mourning Dove':
+                    bird_path = 'https://lh3.googleusercontent.com/AfwwPVjFt8zkhSXHS1UnFSiIaPG91pJem1GuYXaH1m_yr7BdP0ihBFx_rTL45K6PD5XzlwUxh7J8aRzcIuyPGFRHFoQSidnRE4QI8diZQFa4e6nAAJ0r08oqhYYlsk7uWIlkBTJsTA=w2400'
+                if output == 'Pigeon':
+                    bird_path = 'https://lh3.googleusercontent.com/s8OHMQ51Mn7vXxrRlAAEtoMW_43huyEsTgOyPyFwo0n4_sbEwG7VNfAyRMdD_XbpFO5AhlDPXj1dAeF-jpo9ZBjWBEoOxMC7TLWLEueXFQrmmF2YPwSz3MMTs8JCocACGs8Jr9oyaA=w2400'
                 flash("It's a {}! ({:.2f}% probability)".format(output,max_prob*100), "info")
-                return redirect(url_for("index"))
+                return render_template('index.html', bird = bird_path)
             else:
                 flash("Audio not recognized", "info")
-                return redirect(url_for("index"))            
+                return redirect(url_for("index"))
         else:
             flash("No audio recorded or uploaded", "error")
             return redirect(url_for("index"))
@@ -73,8 +80,14 @@ def predict():
         max_prob = np.max(class_probabilities)
         if max_prob>0.7:
             output = prediction[0]
+            if output == 'Cardinal':
+                bird_path = 'https://lh3.googleusercontent.com/PEG9lMQ7ISPsUw006C_dohFR8drduw2FKKA41IYOOvUkDNPpdvBZAb5yQYEk-1whDrpED7J3Qbcmxlr8T99tzZfW7cK6yXXBDzvwAUXoY0C0J9Y3eZ6OrhkAOyGAORgo210GFWMh7w=w2400'
+            if output == 'Mourning Dove':
+                bird_path = 'https://lh3.googleusercontent.com/AfwwPVjFt8zkhSXHS1UnFSiIaPG91pJem1GuYXaH1m_yr7BdP0ihBFx_rTL45K6PD5XzlwUxh7J8aRzcIuyPGFRHFoQSidnRE4QI8diZQFa4e6nAAJ0r08oqhYYlsk7uWIlkBTJsTA=w2400'
+            if output == 'Pigeon':
+                bird_path = 'https://lh3.googleusercontent.com/s8OHMQ51Mn7vXxrRlAAEtoMW_43huyEsTgOyPyFwo0n4_sbEwG7VNfAyRMdD_XbpFO5AhlDPXj1dAeF-jpo9ZBjWBEoOxMC7TLWLEueXFQrmmF2YPwSz3MMTs8JCocACGs8Jr9oyaA=w2400'        
             flash("It's a {}! ({:.2f}% probability)".format(output,max_prob*100), "info")
-            return redirect(url_for("index"))
+            return render_template('index.html', bird = bird_path)
         else:
             flash("Audio not recognized", "info")
             return redirect(url_for("index"))
