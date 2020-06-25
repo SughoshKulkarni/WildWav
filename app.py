@@ -37,6 +37,11 @@ def request_entity_too_large(error):
     flash("File too large", "error")
     return redirect(url_for("index"),413)
 
+@app.errorhandler(500)
+def request_internal_server_error(error):
+    flash("Recording is too small. Please use another audio", "error")
+    return redirect(url_for("index"),500)
+
 
 @app.route('/predict',methods=['GET', 'POST'])
 def predict():
@@ -45,7 +50,7 @@ def predict():
     mfcc_=[]
     labels=['var1','var2','var3','var4','var5','var6','var7','var8','var9','var10','var11','var12','var13']
     
-    if f.filename == '':
+    if f.filename == '' or Path('tmp/audio.wav').is_file():
         if Path('tmp/audio.wav').is_file():
             X, sample_rate = librosa.load(path, sr = 44100, res_type='kaiser_best')
             mfcc_.append(np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=13).T,axis=0))
