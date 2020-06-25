@@ -51,38 +51,84 @@ body  {
 
     <center> 
     <div class="container">
-       <canvas id="analyser" style="width:35%;height:160px;background-color: rgba(4, 43, 76, 0.5);border-radius: 12px;min-width: 300px" width="1024" height="500"></canvas>
+        <canvas id="analyser" style="width:35%;height:160px;background-color: rgba(4, 43, 76, 0.5);border-radius: 12px;min-width: 300px" width="1024" height="500"></canvas>
         <p>
-        <div id="init">  
-        <button id="start" class="button button4" onclick="unpause();startRecording()">RECORD</button> 
+        
+        <div id="recorddiv" class="stuff">
+            <div id="init">  
+                <button id="start" class="button button4" onclick="unpause();startRecording();record_clicked()">RECORD</button> 
+            </div>
         </div>
-        <button id="stop" class="button button5" onclick="stopRecording()">STOP</button>
-
+        
+        <div id="stopdiv" class="stuff hidden">
+            <button id="stop" class="button button5" onclick="stopRecording();stop_clicked()">STOP</button>
         </div>
-        <button id="browse" class="button button3" onclick="document.getElementById('myFileInput').click()">BROWSE FILE</button>
-    
+    </div>
+        
+        <div id="browsediv" class="stuff">
+            <button id="browse" class="button button3" onclick="document.getElementById('myFileInput').click();browse_clicked()">BROWSE FILE</button>
+        </div>
 
-    <div style="width:50%; margin:auto;">
-    <div style="display:inline-block; width:45%;text-align:center;">
-    <div id="myDIV">  
-    <center> 
-    <form action="{{ url_for('predict')}}"method="post" enctype="multipart/form-data">
-    <input type=file name=file id="myFileInput" style="display:none">
-    </center>
-    </div>
-    </center>
-    <center> 
-    <button type="submit" class="button button1">PREDICT</button>
-    </center>
-    </form>
+        <div style="width:50%; margin:auto;">
+            <div style="display:inline-block; width:45%;text-align:center;">
     
-    <center>
-    <form action="{{ url_for('index')}}"method="post">
-    <button type="submit" class="button button2">REFRESH</button> 
-    </form> 
-    </center>
-    </div>
-    </div>
+            <center> 
+            <form action="{{ url_for('predict')}}"method="post" enctype="multipart/form-data">
+            <input type=file name=file id="myFileInput" style="display:none">
+            </center>
+            </center>
+            <center> 
+        
+                <div id="predictdiv" class="stuff">
+                    <button id="predictbtn" type="submit" class="button button1" onclick="predict_clicked()">PREDICT</button>
+                </div>
+        
+            </center>
+            </form>
+    
+            <center>
+            <form action="{{ url_for('index')}}"method="post">
+        
+                <div id="refreshdiv" class="stuff">
+                    <button id="refreshbtn" type="submit" class="button button2">REFRESH</button> 
+                </div>
+        
+            </form> 
+            </center>
+            </div>
+        </div>
+    
+    
+    
+    
+<script>
+
+function record_clicked() {
+    document.getElementById('recorddiv').style.display = 'none';
+    document.getElementById('stopdiv').style.display = 'block';
+    document.getElementById('browsediv').style.display = 'none';
+    document.getElementById('predictdiv').style.display = 'block';
+    document.getElementById('refreshdiv').style.display = 'block';
+}
+
+function stop_clicked() {
+    document.getElementById('recorddiv').style.display = 'none';
+    document.getElementById('stopdiv').style.display = 'none';
+    document.getElementById('browsediv').style.display = 'none';
+    document.getElementById('predictdiv').style.display = 'block';
+    document.getElementById('refreshdiv').style.display = 'block';
+}
+
+function browse_clicked() {
+    document.getElementById('recorddiv').style.display = 'none';
+    document.getElementById('stopdiv').style.display = 'none';
+    document.getElementById('browsediv').style.display = 'block';
+    document.getElementById('predictdiv').style.display = 'block';
+    document.getElementById('refreshdiv').style.display = 'block';
+}
+
+</script>
+    
 
     <center>
     <h1 style="font-size:225%;color: white;background-color: rgba(238, 98, 107,0.8);font-family:Helvetica">
@@ -117,7 +163,8 @@ body  {
 
   <br>
   <br><br><br><br>
-   <style>
+  
+<style>
 .button {
   border: none;
   border-radius: 12px;
@@ -216,7 +263,12 @@ body  {
 myFileInput {
 display: none;
 }
+
+.hidden {
+    display: none;
+}
 </style>
+
     <script src="{{ url_for('static', filename='recorder.js') }}"></script>
     <script src="{{ url_for('static', filename='audiodisplay.js') }}"></script>
     <script src="{{ url_for('static', filename='main.js') }}"></script>
