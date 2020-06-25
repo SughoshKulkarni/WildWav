@@ -56,11 +56,10 @@ body  {
         <div id="init">  
         <button id="start" class="button button4" onclick="unpause();startRecording()">RECORD</button> 
         </div>
-
-        <input type="button" id="stop" onclick="stopRecording()" class="button button5" value="STOP">
+        <button id="stop" class="button button5" onclick="stopRecording()">STOP</button>
 
         </div>
-        <input type="button" onclick="document.getElementById('myFileInput').click()" class="button button3" value="BROWSE FILE" />
+        <button id="browse" class="button button3" onclick="document.getElementById('myFileInput').click()">BROWSE FILE</button>
     
 
     <div style="width:50%; margin:auto;">
