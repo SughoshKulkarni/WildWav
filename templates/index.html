@@ -62,8 +62,12 @@ body  {
 
     <div style="width:50%; margin:auto;">
     <div style="display:inline-block; width:45%;text-align:center;">
-    <div id="myDIV">  <center> <form action="{{ url_for('predict')}}"method="post" enctype="multipart/form-data">
-    <input type=file name=file> </center></div>
+	<div id="myDIV">  
+	<center> 
+	<form action="{{ url_for('predict')}}"method="post" enctype="multipart/form-data">
+	<input type=file name=file id="myFileInput" style="display:none"> 
+	</center>
+	</div>
     </center>
     
  
