@@ -35,6 +35,17 @@ body  {
   display: none;
 }
 </style>
+
+<style>
+* {
+  margin:0;
+  padding:0;
+}
+h1 {
+line-height: 0.9em;
+} 
+</style>
+
 </head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,9 +54,11 @@ body  {
     <div class="jumbotron">
         <div class="container">
             <h1 style="color:white;font-size:2vw;font-family:Brush Script MT;">
+            <br>
                <center> <a href="https://www.sughoshk.com"><img src="https://lh3.googleusercontent.com/9H6UYO3otUiWptObzACYKwonhAh6G6vfUsmleFcFmoodE4pMWbj1HY7s5d_VrBJvsWBw46-WO4ytG1KpDnwyKKmj_5pZuzMx3gZAm0PLjqFyfKj6mDV_0xie4DLWqHRewXlDad11bQ=w2400" alt="Wild-Wav-Logo-White" border="0" style="width:35%;min-width: 300px"></a> </center>
-               <center>Bird Sound Identifier</center>
+               <center><img src="https://lh3.googleusercontent.com/Nlvuw903ncyxHvVlLgx9QqX4Y-Kz7AQzRLfHFOT9M5GL51lDk9SnoEKazTFQSUzcxGAQ2f8SWrR1N-WGw3rgwHkvAGUrKU0Eo6UDlLSWx_2vTugVlep0i08-_Esd8NOKphPCikllXA=w2400" alt="Bird-Sound-Identifier" border="0" style="width:15%;min-width:150px"></center>
             </h1>
+            <br>
         </div>
     </div>
 
@@ -70,7 +83,6 @@ body  {
         </div>
 
         <div style="width:50%; margin:auto;">
-            <div style="display:inline-block; width:45%;text-align:center;">
     
             <center> 
             <form action="{{ url_for('predict')}}"method="post" enctype="multipart/form-data">
@@ -92,10 +104,9 @@ body  {
                 <div id="refreshdiv" class="stuff">
                     <button id="refreshbtn" type="submit" class="button button2">REFRESH</button> 
                 </div>
-        
+                <br>
             </form> 
             </center>
-            </div>
         </div>
     
     
@@ -156,7 +167,7 @@ function browse_clicked() {
      
     </h1>
     </center>
- 
+     <br>
     <center>
     <img src= "{{bird}}" border="0" style="max-height: 300px">
     </center>
@@ -182,7 +193,7 @@ function browse_clicked() {
 
 .button1 {
   border-radius: 12px;
-  padding: 15px 38px;
+  padding: 15px 40px;
   background-color: rgba(4, 37, 74);
   color: white;
   border: 2px solid #04254A;
@@ -196,7 +207,7 @@ function browse_clicked() {
 
 .button2 {
   border-radius: 12px;
-  padding: 15px 34px;
+  padding: 15px 36.5px;
   background-color: rgba(55, 78, 103, 0.8);
   color: white;
   border: 2px solid #374E67;
@@ -228,7 +239,7 @@ function browse_clicked() {
 
 .button4 {
   border-radius: 12px;
-  padding: 15px 40px;
+  padding: 15px 40.5px;
   background-color: rgba(255, 255, 255, 0.5);
   color: black;
   border: 2px solid #07A261;
