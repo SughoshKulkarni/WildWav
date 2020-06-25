@@ -57,18 +57,7 @@ body  {
                          <button id="stop" class="button button5" onclick="stopRecording()">STOP</button>
                         
        </div>
-     <button class="button button3" onclick="myFunction()">BROWSE FILE</button>
-     <script>
-function myFunction() {
-  var x = document.getElementById("myDIV");
-       
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
+     <input type="button" onclick="document.getElementById('myFileInput').click()" class="button button3" value="BROWSE FILE" />
     
 
     <div style="width:50%; margin:auto;">
@@ -175,7 +164,11 @@ function myFunction() {
 .button3:hover {
   background-color: #9355B3;
   color: white;
-  
+}
+
+.button3:focus {
+  background-color: #9355B3;
+  color: white;
 }
 
 .button4 {
@@ -214,6 +207,10 @@ function myFunction() {
   background-color: #DE4A57;
   color: white;
 }
+
+myFileInput {
+		display: none;
+	   }
 </style>
     <script src="{{ url_for('static', filename='recorder.js') }}"></script>
     <script src="{{ url_for('static', filename='audiodisplay.js') }}"></script>
