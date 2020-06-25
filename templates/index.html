@@ -5,12 +5,11 @@
   <meta charset="UTF-8">
   <title>WildWav</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   
-  <style>
+<style>
 body  {
   background-image: url("https://lh3.googleusercontent.com/Dyxs8Cy9L7K5vfBi5DOI2Qv6FuX2XHUQpTxfKJZz_3qo3w3IAr-0D3EQC9p-zbZSHvqQgx9XwoPpVMIjmMfN2GHXBHYbk972IwHzCqJz6ah3H3r8ZYGeUaB3UZ6ikyDxrRw4FBnvJA=w2400");
   background-position: center center;
@@ -20,6 +19,7 @@ body  {
   background-size: cover
 }
 </style>
+
 <style>
 #myDIV {
   border: none;
@@ -36,14 +36,15 @@ body  {
 }
 </style>
 </head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <body>
     <div class="jumbotron">
         <div class="container">
             <h1 style="color:white;font-size:2vw;font-family:Brush Script MT;">
-               <center> <a href="https://sughoshk.com"><img src="https://lh3.googleusercontent.com/9H6UYO3otUiWptObzACYKwonhAh6G6vfUsmleFcFmoodE4pMWbj1HY7s5d_VrBJvsWBw46-WO4ytG1KpDnwyKKmj_5pZuzMx3gZAm0PLjqFyfKj6mDV_0xie4DLWqHRewXlDad11bQ=w2400" alt="Wild-Wav-Logo-White" border="0" style="width:35%;min-width: 300px"></a> </center>
-           
-                <center>Bird Sound Identifier</center>
+               <center> <a href="https://www.sughoshk.com"><img src="https://lh3.googleusercontent.com/9H6UYO3otUiWptObzACYKwonhAh6G6vfUsmleFcFmoodE4pMWbj1HY7s5d_VrBJvsWBw46-WO4ytG1KpDnwyKKmj_5pZuzMx3gZAm0PLjqFyfKj6mDV_0xie4DLWqHRewXlDad11bQ=w2400" alt="Wild-Wav-Logo-White" border="0" style="width:35%;min-width: 300px"></a> </center>
+               <center>Bird Sound Identifier</center>
             </h1>
         </div>
     </div>
@@ -52,38 +53,37 @@ body  {
     <div class="container">
        <canvas id="analyser" style="width:35%;height:160px;background-color: rgba(4, 43, 76, 0.5);border-radius: 12px;min-width: 300px" width="1024" height="500"></canvas>
         <p>
-        <!--    <button id="init" class="button button3" onclick="unpause()">Start listening</button> -->
-        <div id="init">  <button id="start" class="button button4" onclick="unpause();startRecording()">RECORD</button> </div>
-                         <button id="stop" class="button button5" onclick="stopRecording()">STOP</button>
-                        
-       </div>
-     <input type="button" onclick="document.getElementById('myFileInput').click()" class="button button3" value="BROWSE FILE" />
+        <div id="init">  
+        <button id="start" class="button button4" onclick="unpause();startRecording()">RECORD</button> 
+        </div>
+
+        <input type="button" id="stop" onclick="stopRecording()" class="button button5" value="STOP">
+
+        </div>
+        <input type="button" onclick="document.getElementById('myFileInput').click()" class="button button3" value="BROWSE FILE" />
     
 
     <div style="width:50%; margin:auto;">
     <div style="display:inline-block; width:45%;text-align:center;">
-	<div id="myDIV">  
-	<center> 
-	<form action="{{ url_for('predict')}}"method="post" enctype="multipart/form-data">
-	<input type=file name=file id="myFileInput" style="display:none"> 
-	</center>
-	</div>
+    <div id="myDIV">  
+    <center> 
+    <form action="{{ url_for('predict')}}"method="post" enctype="multipart/form-data">
+    <input type=file name=file id="myFileInput" style="display:none">
     </center>
+    </div>
+    </center>
+    <center> 
+    <button type="submit" class="button button1">PREDICT</button>
+    </center>
+    </form>
     
- 
-
-   <center> 
-   <button type="submit" class="button button1">PREDICT</button>
-   
-   </center>
-   </form>
-
-   <center>
-   <form action="{{ url_for('index')}}"method="post">
-   <button type="submit" class="button button2">REFRESH</button> </form> 
-   </center>
-</div>
-</div>
+    <center>
+    <form action="{{ url_for('index')}}"method="post">
+    <button type="submit" class="button button2">REFRESH</button> 
+    </form> 
+    </center>
+    </div>
+    </div>
 
     <center>
     <h1 style="font-size:225%;color: white;background-color: rgba(238, 98, 107,0.8);font-family:Helvetica">
@@ -111,7 +111,11 @@ body  {
      
     </h1>
     </center>
-  
+ 
+    <center>
+    <img src= "{{bird}}" border="0" style="max-height: 300px">
+    </center>
+
   <br>
   <br><br><br><br>
    <style>
@@ -168,6 +172,7 @@ body  {
 .button3:hover {
   background-color: #9355B3;
   color: white;
+  
 }
 
 .button3:focus {
@@ -188,6 +193,11 @@ body  {
   color: white;
 }
 
+.button4:focus {
+  background-color: #07A261;
+  color: white;
+}
+
 .button5 {
   border-radius: 12px;
   padding: 15px 55px;
@@ -202,19 +212,11 @@ body  {
   color: white;
 }
 
-.button5:active {
-  background-color: #DE4A57;
-  color: white;
-}
-
-.button5:focuss {
-  background-color: #DE4A57;
-  color: white;
 }
 
 myFileInput {
-		display: none;
-	   }
+display: none;
+}
 </style>
     <script src="{{ url_for('static', filename='recorder.js') }}"></script>
     <script src="{{ url_for('static', filename='audiodisplay.js') }}"></script>
