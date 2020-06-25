@@ -24,12 +24,19 @@ var rafID = null;
 var analyserContext = null;
 var canvasWidth, canvasHeight;
 var recIndex = 0;
-var constraints = {
-    audio: true,
-    video: false
-} 
 
 
+function gotBuffers(buffers) {
+    audioRecorder.exportMonoWAV(doneEncoding);
+}
+
+function doneEncoding(soundBlob) {
+    // fetch('/audio', {method: "POST", body: soundBlob}).then(response => $('#output').text(response.text()))
+    fetch('/audio', {method: "POST", body: soundBlob}).then(response => response.text().then(text => {
+        document.getElementById('output').value = text;
+    }));
+    recIndex++;
+}
 
 function Redirect() {
                location.href = 'index.html';
@@ -42,7 +49,7 @@ function stopRecording() {
     audioRecorder.stop();
     document.getElementById('stop').disabled = true;
     document.getElementById('start').removeAttribute('disabled');
-    document.getElementById('stop').style.display = "none";
+    audioRecorder.getBuffers(gotBuffers);
 }
 
 function startRecording() {
@@ -149,15 +156,25 @@ function gotStream(stream) {
 }
 
 function initAudio() {
-    if (!navigator.mediaDevices.getUserMedia)
-        navigator.mediaDevices.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+    if (!navigator.getUserMedia)
+        navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     if (!navigator.cancelAnimationFrame)
         navigator.cancelAnimationFrame = navigator.webkitCancelAnimationFrame || navigator.mozCancelAnimationFrame;
     if (!navigator.requestAnimationFrame)
         navigator.requestAnimationFrame = navigator.webkitRequestAnimationFrame || navigator.mozRequestAnimationFrame;
 
-    navigator.mediaDevices.getUserMedia(
-    constraints, gotStream, function (e) {
+    navigator.getUserMedia(
+        {
+            "audio": {
+                "mandatory": {
+                    "googEchoCancellation": "false",
+                    "googAutoGainControl": "false",
+                    "googNoiseSuppression": "false",
+                    "googHighpassFilter": "false"
+                },
+                "optional": []
+            },
+        }, gotStream, function (e) {
             alert('Error getting audio');
             console.log(e);
         });
@@ -171,6 +188,3 @@ function unpause() {
         console.log('Playback resumed successfully');
     });
 }
-
-
-
