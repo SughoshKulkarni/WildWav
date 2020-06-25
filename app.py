@@ -66,11 +66,11 @@ def predict():
             if max_prob>0.7:
                 output = prediction[0]
                 if output == 'Cardinal':
-                    bird_path = 'https://lh3.googleusercontent.com/PEG9lMQ7ISPsUw006C_dohFR8drduw2FKKA41IYOOvUkDNPpdvBZAb5yQYEk-1whDrpED7J3Qbcmxlr8T99tzZfW7cK6yXXBDzvwAUXoY0C0J9Y3eZ6OrhkAOyGAORgo210GFWMh7w=w2400'
+                    bird_path = 'https://lh3.googleusercontent.com/ej9UTPrx_kcYkYgr_berGZ-Y7T2q0Emi9yMuexW_3fzslYXBwOmOn9NBiHlnZNDPQzq6-BFghf6CSVfcuu-22-tEUgKDpuu_nnm5Tq1DjyG1R3pAhGqV4RrqaCUpSONQPWZwS2X2pg=w2400'
                 if output == 'Mourning Dove':
-                    bird_path = 'https://lh3.googleusercontent.com/AfwwPVjFt8zkhSXHS1UnFSiIaPG91pJem1GuYXaH1m_yr7BdP0ihBFx_rTL45K6PD5XzlwUxh7J8aRzcIuyPGFRHFoQSidnRE4QI8diZQFa4e6nAAJ0r08oqhYYlsk7uWIlkBTJsTA=w2400'
+                    bird_path = 'https://lh3.googleusercontent.com/SkBJmdsjOi8H6kBvKeUB0cdbxuj2W036ABWkEt1JZ-aTXq0L0Eyuv4i7pmU6HBwuaHcG9P7kYuz45Qm0izsHquYQy2qyun1C2UmgIEhB6qN2XGY-Gr42DI6-0-3bnww48SdmmuOnTg=w2400'
                 if output == 'Pigeon':
-                    bird_path = 'https://lh3.googleusercontent.com/s8OHMQ51Mn7vXxrRlAAEtoMW_43huyEsTgOyPyFwo0n4_sbEwG7VNfAyRMdD_XbpFO5AhlDPXj1dAeF-jpo9ZBjWBEoOxMC7TLWLEueXFQrmmF2YPwSz3MMTs8JCocACGs8Jr9oyaA=w2400'
+                    bird_path = 'https://lh3.googleusercontent.com/8du1iStq3vN954_k-_DTD6PxEoz6JDG5URiwVqT1SlUPw62DwevItGwZw2r-5fAX3yPEmSHBNaeCnucYgwZ923NueykVt0uxH1Kf8-RS-Mn_tgXg4tW69h8K9j3n0njU8tsaYuDtAQ=w2400'
                 flash("It's a {}! ({:.2f}% probability)".format(output,max_prob*100), "info")
                 return render_template('index.html', bird = bird_path)
             else:
@@ -90,11 +90,11 @@ def predict():
         if max_prob>0.7:
             output = prediction[0]
             if output == 'Cardinal':
-                bird_path = 'https://lh3.googleusercontent.com/PEG9lMQ7ISPsUw006C_dohFR8drduw2FKKA41IYOOvUkDNPpdvBZAb5yQYEk-1whDrpED7J3Qbcmxlr8T99tzZfW7cK6yXXBDzvwAUXoY0C0J9Y3eZ6OrhkAOyGAORgo210GFWMh7w=w2400'
+                bird_path = 'https://lh3.googleusercontent.com/ej9UTPrx_kcYkYgr_berGZ-Y7T2q0Emi9yMuexW_3fzslYXBwOmOn9NBiHlnZNDPQzq6-BFghf6CSVfcuu-22-tEUgKDpuu_nnm5Tq1DjyG1R3pAhGqV4RrqaCUpSONQPWZwS2X2pg=w2400'
             if output == 'Mourning Dove':
-                bird_path = 'https://lh3.googleusercontent.com/AfwwPVjFt8zkhSXHS1UnFSiIaPG91pJem1GuYXaH1m_yr7BdP0ihBFx_rTL45K6PD5XzlwUxh7J8aRzcIuyPGFRHFoQSidnRE4QI8diZQFa4e6nAAJ0r08oqhYYlsk7uWIlkBTJsTA=w2400'
+                bird_path = 'https://lh3.googleusercontent.com/SkBJmdsjOi8H6kBvKeUB0cdbxuj2W036ABWkEt1JZ-aTXq0L0Eyuv4i7pmU6HBwuaHcG9P7kYuz45Qm0izsHquYQy2qyun1C2UmgIEhB6qN2XGY-Gr42DI6-0-3bnww48SdmmuOnTg=w2400'
             if output == 'Pigeon':
-                bird_path = 'https://lh3.googleusercontent.com/s8OHMQ51Mn7vXxrRlAAEtoMW_43huyEsTgOyPyFwo0n4_sbEwG7VNfAyRMdD_XbpFO5AhlDPXj1dAeF-jpo9ZBjWBEoOxMC7TLWLEueXFQrmmF2YPwSz3MMTs8JCocACGs8Jr9oyaA=w2400'        
+                bird_path = 'https://lh3.googleusercontent.com/8du1iStq3vN954_k-_DTD6PxEoz6JDG5URiwVqT1SlUPw62DwevItGwZw2r-5fAX3yPEmSHBNaeCnucYgwZ923NueykVt0uxH1Kf8-RS-Mn_tgXg4tW69h8K9j3n0njU8tsaYuDtAQ=w2400'        
             flash("It's a {}! ({:.2f}% probability)".format(output,max_prob*100), "info")
             return render_template('index.html', bird = bird_path)
         else:
