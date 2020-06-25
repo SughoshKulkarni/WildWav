@@ -142,7 +142,7 @@ function browse_clicked() {
     
 
     <center>
-    <h1 style="font-size:225%;color: white;background-color: rgba(238, 98, 107,0.8);font-family:Helvetica">
+    <h2 style="font-size:225%;color: white;background-color: rgba(238, 98, 107,0.8);font-family:Helvetica">
     {% with errors = get_flashed_messages(category_filter=["error"]) %}
     {% if errors %}
         {%- for msg in errors %}
@@ -151,11 +151,11 @@ function browse_clicked() {
     {% endif %}
     {% endwith %}
     
-    </h1>
+    </h2>
     </center>
     
     <center> 
-    <h1 style="font-size:225%;color: white;background-color: rgba(6, 22, 47,0.8);font-family:Helvetica">     
+    <h2 style="font-size:225%;color: white;background-color: rgba(6, 22, 47,0.8);font-family:Helvetica">     
     
     {% with info = get_flashed_messages(category_filter=["info"]) %}
     {% if info %}
@@ -165,7 +165,7 @@ function browse_clicked() {
     {% endif %}
     {% endwith %}
      
-    </h1>
+    </h2>
     </center>
      <br>
     <center>
