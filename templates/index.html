@@ -101,7 +101,7 @@ line-height: 0.9em;
             <center>
             <form action="{{ url_for('index')}}"method="post">
         
-                <div id="refreshdiv" class="stuff">
+                <div id="refreshdiv" class="stuff hidden" href="/predict">
                     <button id="refreshbtn" type="submit" class="button button2">REFRESH</button> 
                 </div>
                 <br>
@@ -138,6 +138,16 @@ function browse_clicked() {
     document.getElementById('refreshdiv').style.display = 'block';
 }
 
+var url = window.location.href;
+var rfrsh = document.getElementById('refreshdiv');
+var rcrd = document.getElementById('recorddiv');
+var brwsd = document.getElementById('browsediv');
+
+if( url.search( 'predict' ) > 0 ) {
+    rfrsh.style.display = "block";
+    rcrd.style.display = "none";
+    brwsd.style.display = "none";
+}
 </script>
     
 
