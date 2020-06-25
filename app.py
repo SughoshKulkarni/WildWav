@@ -44,7 +44,7 @@ def request_internal_server_error(error):
 
 @app.errorhandler(503)
 def request_file_too_big(error):
-    flash("Audio file is too large. Please use a file less than 5 MB", "error")
+    flash("Audio file is too large. Please use a file with size less than 5 MB", "error")
     return redirect(url_for("index"),503)
 
 @app.route('/predict',methods=['GET', 'POST'])
