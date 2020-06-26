@@ -11,7 +11,7 @@ WildWav is a bird sound identification API that uses audio recording from the us
 Data collection for this type of problem can be difficult. Fortunately, there are several websites to collect crowdsourced audio files.
 
 YouTube has several videos of bird songs of varying length in time. We downloaded the video and converted them to 5-6 seconds length audio files in WAV format. Totally 399 samples of three birds (Cardinal, Mourning dove, and Pigeon) were prepared with 133 audio samples for each bird.
-
+  
 | Bird  | Number of audio samples | Method of collection |
 | :-------------: | :-------------: | :-------------: |
 | Cardinal  | 133  | YouTube video to WAV conversion |
@@ -64,6 +64,13 @@ MFCCs are essentially expressing how humans hear in coefficients with number of 
 
 
 ## Model buidling
+
+For modeling we initially used [SVM](https://en.wikipedia.org/wiki/Support_vector_machine "Support vector machine"). But the model was not predicting with good accuracy.
+
+We then moved to neural netwrork and built a [MLP Classifier](https://en.wikipedia.org/wiki/Multilayer_perceptron#Layers "Multilayer perceptron"). The neural network model used is extremely simple with just one hidden layer. Below is the architecture of the neural network.
+
+<p align="center"><img src="/Images/neural.png" width="500" height="500"></p>
+
 ## Deployment
 
 The modeling involves 
