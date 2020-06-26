@@ -4,8 +4,6 @@ WildWav is a bird sound identification API that uses audio recording from the us
 
 <p align="center"><img src="/Images/Wildwav.png" width="300" height="500"></p>
 
-<p align="center">Demo image</p>
-
 ---
 
 ## Data collection
