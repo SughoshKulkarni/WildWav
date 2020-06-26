@@ -36,6 +36,15 @@ mfcc_.append(np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=13).T,axis
 ```
 
 ### A little bit about FFT, STFT, and MFCC
+Fast Fourier Transform (FFT): Fourier transform basically transforms a waveform which contains time domain values to frequency domain.
+
+A waveform is a time domain signal with time at its x-axis and amplitude at its y-axis.
+
+<img src="/Images/Waveform.png" width="500" height="300">
+
+
+
+
 ## Model buidling
 ## Deployment
 
