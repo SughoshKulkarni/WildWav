@@ -44,8 +44,13 @@ A waveform is a time domain signal with time at its x-axis and amplitude at its 
 <img src="/Images/waveform.png" width="500" height="300">
 
 Fourier transform removes the time domain and has frequency domains and amiplitude of each frequency bin is plotted below.
+FFT is a snapshot of the entire audio in one single view.
+<img src="/Images/fft.png" width="500" height="350">
 
-<img src="/Images/fft.png" width="500" height="300">
+There is a problem with FFT. The FFT gives frequency in x-axis and amplitude in y-axis but loses the time feature. If the audio changes with respect to time, we will not be able to see it FFT. To overcome this, there is Short Time Fourier Transform (STFT)
+
+#### Short Time Fourier Transform (STFT):
+STFT
 
 
 
