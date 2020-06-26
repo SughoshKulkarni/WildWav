@@ -1,4 +1,4 @@
-# WildWav - Bird sound identifier
+# WildWav - Bird Sound Identifier
 
 WildWav is a bird sound identification API that uses audio recording from the user (or browse a WAV file) and predict the type of bird.
 
