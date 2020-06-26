@@ -51,8 +51,12 @@ FFT is a snapshot of the entire audio in one single view.
 There is a problem with FFT. The FFT gives frequency in x-axis and amplitude in y-axis but loses the time feature. If the audio changes with respect to time, we will not be able to see it FFT. To overcome this, there is Short Time Fourier Transform (STFT)
 
 #### Short Time Fourier Transform (STFT):
-STFT
+STFT essentially does FFT for smaller period of time window instead of the entire length of the song. STFT is a collection of these FFTs for each time window selected. The STFT shows the variation of frequency over time. In the below example the signal has two frequency throughout the entire length of the audio. This corresnponds to the FFT plot we saw above.
 
+<img src="/Images/STFT.png" width="500" height="350">
+
+#### Mel Frequency Cepstral Coefficients (MFCC):
+MFCCs are essentially expressing how humans hear in coefficients with number of coefficients ranging from 1-40. The algorithm has high resolution on low frequency and reduces resolution as the frequency increases. This means that higher the frequency, the algorithm uses [mel scale](https://en.wikipedia.org/wiki/Mel_scale) and groups the bunch of frequencies together and gives coefficients to each indicating the value of weight for that frequency bin. 
 
 
 
