@@ -73,8 +73,7 @@ We then moved to neural netwrork and built a [MLP Classifier](https://en.wikiped
 
 ## Deployment
 
-The modeling involves 
-The data is preprocessed using to extract MFCC features using librosa library in python. The features are fed to a neural network model to identify the type of bird.
+Deployment was done on [Heroku](https://www.heroku.com/) with the help of [Flask API](https://www.flaskapi.org/). The recorder interface was obtained using this [repo](https://github.com/danijel3/audio_gui "Audio GUI")
 
 Model was built on Spyder IDE.
 App was built using Flask.
