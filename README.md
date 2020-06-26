@@ -40,7 +40,7 @@ Fast Fourier Transform (FFT): Fourier transform basically transforms a waveform 
 
 A waveform is a time domain signal with time at its x-axis and amplitude at its y-axis.
 
-<img src="/Images/Waveform.png" width="500" height="300">
+<img src="/Images/waveform.png" width="500" height="300">
 
 
 
