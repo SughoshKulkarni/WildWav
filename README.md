@@ -22,14 +22,25 @@ Audio processing is one of the most challenging tasks there exists. Audio has so
 There are many types of features from an audio. Some are-
 * [Short time fourier transform (STFT)](https://en.wikipedia.org/wiki/Short-time_Fourier_transform)
 * [Mel-frequency cepstrum coefficients  (MFCC)](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum#:~:text=Mel%2Dfrequency%20cepstral%20coefficients%20(MFCCs,%2Da%2Dspectrum%22).)
+* [Chroma feature](https://en.wikipedia.org/wiki/Chroma_feature)
 
-Librosa library from Python can extract MFCCs easily.
+For this model, we use MFCC feature. Librosa library from Python can extract MFCCs easily. It can obtained with only one line of code as shown below.
+```Python
+mfcc_=[]
+# Get the path for file
+path = r"tmp/audio.wav"
+# Load the file
+X, sample_rate = librosa.load(path, sr = 44100, res_type='kaiser_best')
+# Insert MFCC features in mfcc_
+mfcc_.append(np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=13).T,axis=0))
+```
+
 ### A little bit about FFT, STFT, and MFCC
 ## Model buidling
 ## Deployment
 
 The modeling involves 
-The data is preprocessed using to extract [MFCC features]() using librosa library in python. The features are fed to a neural network model to identify the type of bird.
+The data is preprocessed using to extract MFCC features using librosa library in python. The features are fed to a neural network model to identify the type of bird.
 
 Model was built on Spyder IDE.
 App was built using Flask.
