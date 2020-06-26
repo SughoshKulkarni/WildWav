@@ -21,6 +21,10 @@ def index():
         return render_template('index.html', bird = bird_path)
     return render_template('index.html', bird = bird_path)
 
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    return render_template('about.html')
+
 def allowed_file(f):
     return '.' in f and \
            f.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
