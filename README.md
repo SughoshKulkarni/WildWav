@@ -4,7 +4,7 @@ Ever heard distinct bird sounds in the wild or around you and wondered which bir
 
 WildWav is a web application that analyzes the bird's sound using audio recording captured by the user (or browse a WAV file) to predict the type of bird.
 
-<p align="center"><img src="/Images/Wildwav.png" width="300" height="500"></p>
+<p align="center"><img src="/Images/Wildwave_home_main.png" width="2560" height="1440"></p>
 
 ---
 
