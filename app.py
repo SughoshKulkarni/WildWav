@@ -71,12 +71,15 @@ def predict():
                 output = prediction[0]
                 if output == 'Cardinal':
                     bird_path = 'https://lh3.googleusercontent.com/ej9UTPrx_kcYkYgr_berGZ-Y7T2q0Emi9yMuexW_3fzslYXBwOmOn9NBiHlnZNDPQzq6-BFghf6CSVfcuu-22-tEUgKDpuu_nnm5Tq1DjyG1R3pAhGqV4RrqaCUpSONQPWZwS2X2pg=w2400'
+                    bird_link = 'https://www.allaboutbirds.org/guide/Northern_Cardinal/overview'
                 if output == 'Mourning Dove':
                     bird_path = 'https://lh3.googleusercontent.com/SkBJmdsjOi8H6kBvKeUB0cdbxuj2W036ABWkEt1JZ-aTXq0L0Eyuv4i7pmU6HBwuaHcG9P7kYuz45Qm0izsHquYQy2qyun1C2UmgIEhB6qN2XGY-Gr42DI6-0-3bnww48SdmmuOnTg=w2400'
+                    bird_link = 'https://www.allaboutbirds.org/guide/Mourning_Dove'
                 if output == 'Pigeon':
-                    bird_path = 'https://lh3.googleusercontent.com/8du1iStq3vN954_k-_DTD6PxEoz6JDG5URiwVqT1SlUPw62DwevItGwZw2r-5fAX3yPEmSHBNaeCnucYgwZ923NueykVt0uxH1Kf8-RS-Mn_tgXg4tW69h8K9j3n0njU8tsaYuDtAQ=w2400'
+                    bird_path = 'https://lh3.googleusercontent.com/8du1iStq3vN954_k-_DTD6PxEoz6JDG5URiwVqT1SlUPw62DwevItGwZw2r-5fAX3yPEmSHBNaeCnucYgwZ923NueykVt0uxH1Kf8-RS-Mn_tgXg4tW69h8K9j3n0njU8tsaYuDtAQ=w2400'        
+                    bird_link = 'https://www.allaboutbirds.org/guide/Rock_Pigeon'
                 flash("It's a {}! ({:.2f}% probability)".format(output,max_prob*100), "info")
-                return render_template('index.html', bird = bird_path)
+                return render_template('index.html', bird = bird_path, birdlink = bird_link)
             else:
                 flash("Audio not recognized", "info")
                 return redirect(url_for("index"))
@@ -95,12 +98,15 @@ def predict():
             output = prediction[0]
             if output == 'Cardinal':
                 bird_path = 'https://lh3.googleusercontent.com/ej9UTPrx_kcYkYgr_berGZ-Y7T2q0Emi9yMuexW_3fzslYXBwOmOn9NBiHlnZNDPQzq6-BFghf6CSVfcuu-22-tEUgKDpuu_nnm5Tq1DjyG1R3pAhGqV4RrqaCUpSONQPWZwS2X2pg=w2400'
+                bird_link = 'https://www.allaboutbirds.org/guide/Northern_Cardinal/overview'
             if output == 'Mourning Dove':
                 bird_path = 'https://lh3.googleusercontent.com/SkBJmdsjOi8H6kBvKeUB0cdbxuj2W036ABWkEt1JZ-aTXq0L0Eyuv4i7pmU6HBwuaHcG9P7kYuz45Qm0izsHquYQy2qyun1C2UmgIEhB6qN2XGY-Gr42DI6-0-3bnww48SdmmuOnTg=w2400'
+                bird_link = 'https://www.allaboutbirds.org/guide/Mourning_Dove'
             if output == 'Pigeon':
                 bird_path = 'https://lh3.googleusercontent.com/8du1iStq3vN954_k-_DTD6PxEoz6JDG5URiwVqT1SlUPw62DwevItGwZw2r-5fAX3yPEmSHBNaeCnucYgwZ923NueykVt0uxH1Kf8-RS-Mn_tgXg4tW69h8K9j3n0njU8tsaYuDtAQ=w2400'        
+                bird_link = 'https://www.allaboutbirds.org/guide/Rock_Pigeon'
             flash("It's a {}! ({:.2f}% probability)".format(output,max_prob*100), "info")
-            return render_template('index.html', bird = bird_path)
+            return render_template('index.html', bird = bird_path, birdlink = bird_link)
         else:
             flash("Audio not recognized", "info")
             return redirect(url_for("index"))
