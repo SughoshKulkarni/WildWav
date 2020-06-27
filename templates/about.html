@@ -2,6 +2,9 @@
 <html>
 
 <head>
+<link rel="icon" 
+      type="image/png" 
+      href="https://lh3.googleusercontent.com/ujASj7mUvUavh-f3-n1PoZ5CNGAQ0IByns4RZPMwvQOmvAQ8fP1xOk5S65ilqf979SZyp9047YN3USrLGGw6wq1417f9kg6hbmoYN8h6lmXC9RQ9nVMg7mohYeu43_8cIYS0oVbWGQ=s157-p-k">
   <meta charset="UTF-8">
   <title>About | WildWav</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -78,41 +81,77 @@ body {
   background-color: none;
 }
 
-p { 
-  background-color: rgba(4, 43, 76, 0.5); 
-
-  border-radius: 12px;
-  color: white;
-  font-family:Helvetica;
-  font-size:90%
-
+</style>
+<style>
+* {
+  box-sizing: border-box;
 }
 
+.column {
+  float: center;
+  width: 35.33%;
+  
+  padding: 10px;
+  margin: 0 auto;
+  display: inline-block
+  
+  
+}
+
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {
+  .column {
+    width: 70%;
+  }
+}
 </style>
-<br><br>
+
 <CENTER>
-<a style="color:white;text-decoration:none;font-family:Helvetica;font-size:100%"><h3>Welcome to WildWav!</h3></a>
-<br><br><br>
+<div style="width:35%;background-color: rgba(4, 43, 76, 0.5);border-radius: 12px;min-width: 300px;color:white;font-family:Helvetica;font-size:90%;padding-top:0px;padding-right:30px;padding-bottom:30px;padding-left:30px;" width="1024" height="500">
+<br><br>
+<a style="color:white;text-decoration:none;font-family:Helvetica;font-size:110%"><h3>Welcome to WildWav!</h3></a>
+<br>
+<p style="font-size:100%"> <br>
 
-
-
-<p> <br>
   WildWav is a bird sound identification API that uses audio recording
-  <br> 
   from the user (or browse a WAV file) and predict the type of bird.
-<br><br><br><br><br><br>
+  
+  
+  
+<br><br><br>
   Created by:
   <br>
 <br>
-  <a href="https://www.linkedin.com/in/sughoshkulkarni/" style="color: white" target="_blank"> Sughosh Kulkarni</a>
-  <br>&<br><a href="https://www.linkedin.com/in/vaishrk93" style="color: white" target="_blank"> Vaishnav Rathnakumar</a><br><br><br><br><br><br><br><br><br><br>
 
+<div class="row" align="center">
+  <div class="column" align="center">
+      <img src="https://lh3.googleusercontent.com/kZ_YVf0-VEs8GPtKC7Y2jP2bTRrZDs99EPlF7cMsNWQoUU-VqTuigV4985a31L-V1j9439l2GGsYhp7a6OQZYhz-Fzk0sDLAXQMYhECScK81cYGs8V_cN_HblN75PrgYWpYVhD5PZw=w2400" alt="Sughosh" style="width:100%"><br>
+	<a href="https://www.linkedin.com/in/sughoshkulkarni/" style="color: white;font-size:115%;text-decoration:none;font-weight: bold;line-height: 25px;" target="_blank">Sughosh Kulkarni</a><br>
+  </div>
+  <div class="column" align="center">
+    <img src="https://lh3.googleusercontent.com/WF9jn3IKwtYnjqNNrWWwlrQptadO0WQ3Egg4DKFdJKDa6lNj5ehV7pW1Zz1lpZzCsuh3hQhZUjlwAh0oFDmnDRiWV-1lc__1VhK5fU87Dg-KeKt--VT6k13p6VzHkEud-cZZhInv8Q=w2400" alt="Vaishnav" style="width:97%"><br>
+	<a href="https://www.linkedin.com/in/vaishrk93" style="color: white;font-size:115%;text-decoration:none;font-weight: bold;line-height: 25px;" target="_blank">Vaishnav Rathnakumar</a><br>
+  </div>
+
+</div>
+
+  
+  <br><br><br>
 
 
 More about this project:
- <a href="https://github.com/SughoshKulkarni/WildWav" style="color: white" target="_blank"> WildWav/GitHub</a> <br>
- <br></p>
-
+ <a href="https://github.com/SughoshKulkarni/WildWav" style="color: white" target="_blank"> WildWav/GitHub</a> 
+ </p>
+ 
+</div>
 
 
 </CENTER>
@@ -129,4 +168,3 @@ More about this project:
 
 
 </html>
-
