@@ -13,7 +13,7 @@ app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024
 app.secret_key = "VaishSughosh%$1234"
 model = pickle.load(open('Bird Predictor_neural.pkl', 'rb'))
 
-@app.route('//', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     bird_path = ''
     if Path('tmp/audio.wav').is_file():
@@ -51,7 +51,7 @@ def request_file_too_big(error):
     flash("Audio file is too large. Please use a file with size less than 5 MB", "error")
     return redirect(url_for("index"),503)
 
-@app.route('/predict',methods=['GET', 'POST'])
+@app.route('/predict/',methods=['GET', 'POST'])
 def predict():
     f = (request.files['file'])
     path = r"tmp/audio.wav"
