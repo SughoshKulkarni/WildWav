@@ -51,7 +51,7 @@ def request_file_too_big(error):
     flash("Audio file is too large. Please use a file with size less than 5 MB", "error")
     return redirect(url_for("index"),503)
 
-@app.route('/predict/',methods=['GET', 'POST'])
+@app.route('/predict',methods=['GET', 'POST'])
 def predict():
     f = (request.files['file'])
     path = r"tmp/audio.wav"
