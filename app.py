@@ -25,6 +25,14 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/help', methods=['GET', 'POST'])
+def help():
+    return render_template('about.html')
+
+@app.route('/feedback', methods=['GET', 'POST'])
+def feedback():
+    return render_template('feedback.html')
+
 def allowed_file(f):
     return '.' in f and \
            f.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
