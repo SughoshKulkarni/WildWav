@@ -33,6 +33,10 @@ def help():
 def feedback():
     return render_template('feedback.html')
 
+@app.route('/sitemap', methods=['GET', 'POST'])
+def sitemap():
+    return render_template('sitemap.xml')
+
 def allowed_file(f):
     return '.' in f and \
            f.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
