@@ -65,6 +65,7 @@ def predict():
     path = r"tmp/audio.wav"
     mfcc_=[]
     labels=['var1','var2','var3','var4','var5','var6','var7','var8','var9','var10','var11','var12','var13']
+    bird_more = 'https://lh3.googleusercontent.com/89AWJHL7bzdieXEV9GmJ5AcDa_pAh1GQcf5_YAfmanjo6GRFtxNzxO67QDsMV9SfOO9CrHDY5W0teRcwVlRxoG_zgdI6s9w8LcyDKL8XX6Dtjk4L6sMGBKToz3Hb-BfuWVsmtFQmFQ=w2400'
     
     if f.filename == '' or Path('tmp/audio.wav').is_file():
         if Path('tmp/audio.wav').is_file():
@@ -87,7 +88,7 @@ def predict():
                     bird_path = 'https://lh3.googleusercontent.com/8du1iStq3vN954_k-_DTD6PxEoz6JDG5URiwVqT1SlUPw62DwevItGwZw2r-5fAX3yPEmSHBNaeCnucYgwZ923NueykVt0uxH1Kf8-RS-Mn_tgXg4tW69h8K9j3n0njU8tsaYuDtAQ=w2400'        
                     bird_link = 'https://www.allaboutbirds.org/guide/Rock_Pigeon'
                 flash("It's a {}! ({:.2f}% probability)".format(output,max_prob*100), "info")
-                return render_template('index.html', bird = bird_path, birdlink = bird_link)
+                return render_template('index.html', bird = bird_path, birdlink = bird_link, birdmore = bird_more)
             else:
                 flash("Audio not recognized", "info")
                 return redirect(url_for("index"))
@@ -114,7 +115,7 @@ def predict():
                 bird_path = 'https://lh3.googleusercontent.com/8du1iStq3vN954_k-_DTD6PxEoz6JDG5URiwVqT1SlUPw62DwevItGwZw2r-5fAX3yPEmSHBNaeCnucYgwZ923NueykVt0uxH1Kf8-RS-Mn_tgXg4tW69h8K9j3n0njU8tsaYuDtAQ=w2400'        
                 bird_link = 'https://www.allaboutbirds.org/guide/Rock_Pigeon'
             flash("It's a {}! ({:.2f}% probability)".format(output,max_prob*100), "info")
-            return render_template('index.html', bird = bird_path, birdlink = bird_link)
+            return render_template('index.html', bird = bird_path, birdlink = bird_link, birdmore = bird_more)
         else:
             flash("Audio not recognized", "info")
             return redirect(url_for("index"))
