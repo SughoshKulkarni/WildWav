@@ -33,7 +33,7 @@ def help():
 def feedback():
     return render_template('feedback.html')
 
-@app.route('/sitemap', methods=['GET', 'POST'])
+@app.route('/sitemap.xml', methods=['GET', 'POST'])
 def sitemap():
     return render_template('sitemap.xml')
 
