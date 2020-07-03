@@ -2,6 +2,14 @@
 <html >
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171569126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-171569126-1');
+</script>
 <link rel="icon" 
       type="image/png"
       href="https://lh3.googleusercontent.com/ujASj7mUvUavh-f3-n1PoZ5CNGAQ0IByns4RZPMwvQOmvAQ8fP1xOk5S65ilqf979SZyp9047YN3USrLGGw6wq1417f9kg6hbmoYN8h6lmXC9RQ9nVMg7mohYeu43_8cIYS0oVbWGQ=s157-p-k">
@@ -49,6 +57,41 @@ body  {
 h1 {
 line-height: 0.9em;
 } 
+html {
+    overflow-y: scroll;
+}
+</style>
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  
+   background-color: #04122C;
+  border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1E6583; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3094AB; 
+}
+::-webkit-scrollbar-corner
+background-color: #04122C;
+   
+}
+iframe{
+    overflow:hidden;
+}
 </style>
 
 </head>
@@ -190,10 +233,10 @@ if( url.search( 'predict' ) > 0 ) {
     </center>
     <br>
     <center>
-    <button class="togglebtn"><img src="{{bird}}" border="0" style="max-height: 300px"></button>
+    <button class="togglebtn"><div id="container"><img src="{{bird}}" border="0" style="max-height: 300px" id="img1"><img src="{{birdmore}}" border="0" style="max-height: 300px" id="img2"></div></button>
     </center>
 <center><br><div class="box1" id="box1" style="width:34%;background-color: rgba(4, 43, 76, 0.5);border-radius: 12px;min-width: 300px;color:white;font-family:Helvetica;font-size:90%;padding-top:10px;padding-right:10px;padding-bottom:20px;padding-left:10px;" width="1024" height="1000">
-<br><iframe src="{{birdlink}}" width="650" height="650"style="border-radius: 12px;width:95%;border: none;">
+<br><iframe src="{{birdlink}}" width="650" height="650"style="border-radius: 12px;width:95%;border: none;" >
 </iframe>
 </div></center>
 <br>
@@ -209,6 +252,18 @@ function showElement(){
     elementToShow.classList.toggle("show");
 }
 </script>
+<style>
+#container {
+    position:relative;
+}
+#img2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+</style>
 <style>
 .box1 {
   display: none;
@@ -226,6 +281,7 @@ function showElement(){
  margin: 0px 0px;
  padding: 0px 0px;
  cursor: pointer;
+ color: white;
 
 }
 </style>
