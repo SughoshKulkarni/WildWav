@@ -27,7 +27,7 @@ def about():
 
 @app.route('/help', methods=['GET', 'POST'])
 def help():
-    return render_template('about.html')
+    return render_template('help.html')
 
 @app.route('/feedback', methods=['GET', 'POST'])
 def feedback():
