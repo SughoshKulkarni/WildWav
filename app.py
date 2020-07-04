@@ -73,7 +73,7 @@ def predict():
     
     if f.filename == '' or Path('tmp/audio.wav').is_file():
         if Path('tmp/audio.wav').is_file():
-            X, sample_rate = librosa.load(path, sr = 44100, res_type='kaiser_best')
+            X, sample_rate = librosa.load(str(Path('tmp/audio.wav')), sr = 44100, res_type='kaiser_best')
             mfcc_.append(np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=13).T,axis=0))
             data_test= pd.DataFrame.from_records(mfcc_, columns=labels)
             prediction = model.predict(data_test)
