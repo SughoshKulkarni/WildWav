@@ -5,7 +5,7 @@ Ever heard distinct bird sounds in the wild or around you and wondered which bir
 
 WildWav is a web application that analyzes the bird's sound using audio recording captured by the user (or browse a WAV file) to predict the type of bird.
 
-<p align="center"><img src="https://photos.app.goo.gl/S7wFiv62fWSNKGb98" width="100%" height="100%"></p>
+<p align="center"><img src=/Images/Wildwave_home_main1.png" width="100%" height="100%"></p>
 
 **Summary**:
 The Bird Sound Identifier is a personal project of mine with my friend [Vaish]( https://www.linkedin.com/in/vaishrk93/ "Vaish-LinkedIn") to explore the possibilities of machine learning. Also, to bring an idea to life and make sure it is usable by everyone by deploying the model on the Heroku server.
