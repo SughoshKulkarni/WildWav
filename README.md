@@ -97,7 +97,7 @@ FFT is a snapshot of the entire audio in one single view.
 There is a problem with FFT. The FFT gives frequency in x-axis and amplitude in y-axis but loses the time feature. If the audio changes with respect to time, we will not be able to see it FFT. To overcome this, there is Short Time Fourier Transform (STFT)
 
 #### Short Time Fourier Transform (STFT):
-STFT essentially does FFT for smaller period of time window instead of the entire length of the song. STFT is a collection of these FFTs for each time window selected. The STFT shows the variation of frequency over time. In the below example the signal has two frequency throughout the entire length of the audio. This corresnponds to the FFT plot we saw above.
+STFT essentially does FFT for smaller period of time window instead of the entire length of the song. STFT is a collection of these FFTs for each time window selected. The STFT shows the variation of frequency over time. In the below example the signal has two frequency throughout the entire length of the audio. This corresponds to the FFT plot we saw above.
 
 <p align="center"><img src="https://lh3.googleusercontent.com/Dw_hah2Xn3lZi8ZLY_GLZPGZP0OKHtK1MUyIMenMqU387gJFWoNLVAAZT5QdZfzDy8hjNEl_UDOTsIlDDw7aDc0Z9Z3Kn65C1jvEFIICABt3J6P1TGlw10jUcOp237FsTVc-6zG4CQ=w2400" width="500" height="116%"></p>
 
