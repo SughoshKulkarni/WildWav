@@ -8,7 +8,7 @@ WildWav is a web application that analyzes the bird's sound using audio recordin
 <p align="center"><img src="/Images/Wildwave_home_main1.png" width="100%" height="100%"></p>
 
 **Summary**:
-The Bird sound identifier is a personal project of mine with my friend [Vaish]( https://www.linkedin.com/in/vaishrk93/ "Vaish-LinkedIn") to explore the possibilities of machine learning. Also, to bring an idea to life and make sure it is usable by everyone by deploying the model on the Heroku server.
+The Bird Sound Identifier is a personal project of mine with my friend [Vaish]( https://www.linkedin.com/in/vaishrk93/ "Vaish-LinkedIn") to explore the possibilities of machine learning. Also, to bring an idea to life and make sure it is usable by everyone by deploying the model on the Heroku server.
 For this project, we used Flask API to create the app and Python for modeling. Vaish did all the web designing using HTML. The app uses a recorder.js javascript file that we found [here](https://github.com/danijel3/audio_gui "Audio recorder").
 
 **Functionality**:
