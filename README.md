@@ -87,19 +87,19 @@ Fourier transform basically transforms a waveform which contains time domain val
 
 A waveform is a time domain signal with time at its x-axis and amplitude at its y-axis.
 
-<p align="center"><img src="/Images/waveform.png" width="500" height="100%"></p>
+<p align="center"><img src="https://lh3.googleusercontent.com/biyMcffDvmgUDyKMmu4nOQG04rbMbmZ5HdPJQJ-bA6AqiP2KPUButLWJnImoCT1LqpRmU4B7LYSgmEmu3J2xxiqzdordHbh7rMa_yFC7lNJ55okzQ_fSw0kNm32nbBnfDM0iJ-4lOA=w2400" width="500" height="100%"></p>
 
 Fourier transform removes the time domain and has frequency domains and amiplitude of each frequency bin is plotted below.
 FFT is a snapshot of the entire audio in one single view.
 
-<p align="center"><img src="/Images/fft.png" width="500" height="116%"></p>
+<p align="center"><img src="https://lh3.googleusercontent.com/l848dYeolN0Oz_5LjDyLx3ldX1ZLrwNxE5Jd3ZgGPpnwiDjWfEZFVppmJ6yZ4D7Ee_nQzHoQb2K5rne5iG6zSzo0hwDeAan0tplCa3xA2faHd56rIMiWABpwIjvvC67Ujwwyk2HmEQ=w2400" width="500" height="116%"></p>
 
 There is a problem with FFT. The FFT gives frequency in x-axis and amplitude in y-axis but loses the time feature. If the audio changes with respect to time, we will not be able to see it FFT. To overcome this, there is Short Time Fourier Transform (STFT)
 
 #### Short Time Fourier Transform (STFT):
 STFT essentially does FFT for smaller period of time window instead of the entire length of the song. STFT is a collection of these FFTs for each time window selected. The STFT shows the variation of frequency over time. In the below example the signal has two frequency throughout the entire length of the audio. This corresnponds to the FFT plot we saw above.
 
-<p align="center"><img src="/Images/STFT.png" width="500" height="116%"></p>
+<p align="center"><img src="https://lh3.googleusercontent.com/Dw_hah2Xn3lZi8ZLY_GLZPGZP0OKHtK1MUyIMenMqU387gJFWoNLVAAZT5QdZfzDy8hjNEl_UDOTsIlDDw7aDc0Z9Z3Kn65C1jvEFIICABt3J6P1TGlw10jUcOp237FsTVc-6zG4CQ=w2400" width="500" height="116%"></p>
 
 #### Mel Frequency Cepstral Coefficients (MFCC):
 MFCCs are essentially expressing how humans hear in coefficients with number of coefficients ranging from 1-40. The algorithm has high resolution on low frequency and reduces resolution as the frequency increases. This means that higher the frequency, the algorithm uses [mel scale](https://en.wikipedia.org/wiki/Mel_scale) and groups the bunch of frequencies together and gives coefficients to each indicating the value of weight for that frequency bin. 
@@ -112,7 +112,7 @@ For modeling we initially used [SVM](https://en.wikipedia.org/wiki/Support_vecto
 
 We then moved to neural netwrork and built a [MLP Classifier](https://en.wikipedia.org/wiki/Multilayer_perceptron#Layers "Multilayer perceptron"). The neural network model used is extremely simple with just one hidden layer. Below is the architecture of the neural network.
 
-<p align="center"><img src="/Images/neural.png" width="500" height="167%"></p>
+<p align="center"><img src="https://lh3.googleusercontent.com/v1-P76upQ1sn451s6nyyhuOXmnGaOcw2ECDKV4rIf4D-e4FUtzO3LTvCZS2VkbeS8ChJNYJAtmONL0sr4bEcDfTiYhPVOUrt7JTVf2ozBND81MeIoZYAyD_LCcWHkQDaoErOJ1QsTg=w2400" width="500" height="167%"></p>
 
 ## Deployment
 
