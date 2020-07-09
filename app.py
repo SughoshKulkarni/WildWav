@@ -5,6 +5,7 @@ import librosa
 import numpy as np
 import pandas as pd
 from pathlib import Path
+import socket
 
 ALLOWED_EXTENSIONS = {'wav'}
 
@@ -15,9 +16,11 @@ model = pickle.load(open('Bird Predictor_neural.pkl', 'rb'))
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
     bird_path = ''
-    if Path('tmp/audio.wav').is_file():
-        Path('tmp/audio.wav').unlink()
+    if Path('tmp/audio'+ip_address+'.wav').is_file():
+        Path('tmp/audio'+ip_address+'.wav').unlink()
         return render_template('index.html', bird = bird_path)
     return render_template('index.html', bird = bird_path)
 
@@ -43,9 +46,11 @@ def allowed_file(f):
 
 @app.route('/audio', methods=['POST'])
 def audio():
-    with open('./tmp/audio.wav', 'wb') as f:
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
+    with open('./tmp/audio'+ip_address+'.wav', 'wb') as f:
         f.write(request.data)
-    proc = run(['ffprobe', '-of', 'default=noprint_wrappers=1', './tmp/audio.wav'], text=True, stderr=PIPE)
+    proc = run(['ffprobe', '-of', 'default=noprint_wrappers=1', './tmp/audio'+ip_address+'.wav'], text=True, stderr=PIPE)
     return proc.stderr
 
 @app.errorhandler(413)
@@ -66,20 +71,20 @@ def request_file_too_big(error):
 @app.route('/predict',methods=['GET', 'POST'])
 def predict():
     f = (request.files['file'])
-    path = r"tmp/audio.wav"
     mfcc_=[]
     labels=['var1','var2','var3','var4','var5','var6','var7','var8','var9','var10','var11','var12','var13']
     bird_more = 'https://lh3.googleusercontent.com/89AWJHL7bzdieXEV9GmJ5AcDa_pAh1GQcf5_YAfmanjo6GRFtxNzxO67QDsMV9SfOO9CrHDY5W0teRcwVlRxoG_zgdI6s9w8LcyDKL8XX6Dtjk4L6sMGBKToz3Hb-BfuWVsmtFQmFQ=w2400'
-    
-    if f.filename == '' or Path('tmp/audio.wav').is_file():
-        if Path('tmp/audio.wav').is_file():
-            X, sample_rate = librosa.load(str(Path('tmp/audio.wav')), sr = 44100, res_type='kaiser_best')
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
+    if f.filename == '' or Path('/tmp/audio'+ip_address+'.wav').is_file():
+        if Path('tmp/audio'+ip_address+'.wav').is_file():
+            X, sample_rate = librosa.load((Path('tmp/audio'+ip_address+'.wav')), sr = 44100, res_type='kaiser_best')
             mfcc_.append(np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=13).T,axis=0))
             data_test= pd.DataFrame.from_records(mfcc_, columns=labels)
             prediction = model.predict(data_test)
             class_probabilities = model.predict_proba(data_test)
             max_prob = np.max(class_probabilities)
-            Path('tmp/audio.wav').unlink()
+            Path('tmp/audio'+ip_address+'.wav').unlink()
             if max_prob>0.7:
                 output = prediction[0]
                 if output == 'Cardinal':
