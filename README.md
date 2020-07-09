@@ -35,6 +35,15 @@ In terms of the application, the app can work on both computer and android devic
 The display automatically resizes to fit the device screen best.
 The app currently does not work on iOS devices due to security reasons.
 
+Languages and Technologies used:
+* Python
+* Flask API
+* HTML
+* JavaScript
+* Heroku
+
+You can check out the website [here](https://www.wildwav.com/ "WildWav.com"), or you can keep reading to understand more about how we built this app from getting the data to modeling and deployment process.
+
 ---
 
 ## Data collection
