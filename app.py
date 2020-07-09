@@ -16,12 +16,12 @@ model = pickle.load(open('Bird Predictor_neural.pkl', 'rb'))
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    #hostname = socket.gethostname()
-    #ip_address = socket.gethostbyname(hostname)
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
     bird_path = ''
-    #if Path('tmp/audio'+ip_address+'.wav').is_file():
-    #    Path('tmp/audio'+ip_address+'.wav').unlink()
-    #    return render_template('index.html', bird = bird_path)
+    if Path('tmp/audio'+ip_address+'.wav').is_file():
+        Path('tmp/audio'+ip_address+'.wav').unlink()
+        return render_template('index.html', bird = bird_path)
     return render_template('index.html', bird = bird_path)
 
 @app.route('/about', methods=['GET', 'POST'])
