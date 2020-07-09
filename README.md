@@ -1,11 +1,39 @@
 # WildWav - Bird Sound Identifier
-### [Click here to go to the website](https://www.wildwav.com/)
+[Click here to go to the website](https://www.wildwav.com/ "WildWav.com")
 
 Ever heard distinct bird sounds in the wild or around you and wondered which bird it is? WildWav is developed precisely to identify our flappy friend!
 
 WildWav is a web application that analyzes the bird's sound using audio recording captured by the user (or browse a WAV file) to predict the type of bird.
 
 <p align="center"><img src="/Images/Wildwave_home_main1.png" width="100%" height="100%"></p>
+
+Summary:
+The Bird sound identifier is a personal project of mine with my friend [Vaish]( https://www.linkedin.com/in/vaishrk93/ "Vaish-LinkedIn") to explore the possibilities of machine learning. Also, to bring an idea to life and make sure it is usable by everyone by deploying the model on the Heroku server.
+For this project, we used Flask API to create the app and Python for modeling. Vaish did all the web designing using HTML. The app uses a recorder.js javascript file that we found [here](https://github.com/danijel3/audio_gui "Audio recorder").
+
+Functionality:
+The web app has an interface to either record to capture the bird's sound using the device's microphone or browse file option to choose a file that 
+If you choose to RECORD and capture the bird's sound:
+1.	Place your device where the bird's sound is most audible.
+2.	Click the 'RECORD' button. The analyzer box should display the audio waveform, indicating that the recording has initiated.
+3.	Wait for a few seconds (maximum 45 seconds) and click the 'STOP' button.
+4.	Click the 'PREDICT' button and wait until the application processes the recording.
+5.	The type of bird will be displayed along with an image.
+6.	Click on the bird image for more information about the bird.
+7.	Click 'REFRESH' to start over.
+
+If you choose to BROWSE and upload the bird-sound file (.wav format):
+1.	Click the 'BROWSE' button.
+2.	Select the bird-sound file (.wav) and click open.
+3.	Click the 'PREDICT' button and wait till the file is uploaded.
+4.	The type of bird will be displayed along with an image.
+5.	Click on the bird image for more information about the bird.
+6.	Click 'REFRESH' to start over.
+
+Design:
+In terms of the application, the app can work on both computer and android devices. The Chrome browser has the best visual effects.
+The display automatically resizes to fit the device screen best.
+The app currently does not work on iOS devices due to security reasons.
 
 ---
 
