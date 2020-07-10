@@ -163,7 +163,7 @@ function initAudio() {
     if (!navigator.requestAnimationFrame)
         navigator.requestAnimationFrame = navigator.webkitRequestAnimationFrame || navigator.mozRequestAnimationFrame;
 
-    navigator.mediaDevices.getUserMedia(
+    navigator.getUserMedia(
         {
             "audio": {
                 "mandatory": {
