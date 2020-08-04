@@ -167,8 +167,8 @@ The following instructions will help you navigate through the app and make the r
 <ol style="padding-left:15px;">
 <li style="margin-left:15px;text-align:left;padding-left:0px;">Place your device where the bird's sound is most audible.</li>
 <li style="margin-left:15px;text-align:left;padding-left:0px;">Click the 'RECORD' button. The analyzer box should display the audio waveform, indicating that the recording has initiated.</li>
-<li style="margin-left:15px;text-align:left;padding-left:0px;">Wait for a few seconds (maximum 10-12 seconds) and click the 'STOP' button.</li>
-<li style="margin-left:15px;text-align:left;padding-left:0px;">Click the 'PREDICT' button and wait until the application processes the recording.</li>
+<li style="margin-left:15px;text-align:left;padding-left:0px;">Wait for few seconds (maximum 45 seconds) and click the 'STOP' button.</li>
+<li style="margin-left:15px;text-align:left;padding-left:0px;">Click the 'PREDICT' button and wait till the application processes the recording.</li>
 <li style="margin-left:15px;text-align:left;padding-left:0px;">The type of bird will be displayed along with an image.</li>
 <li style="margin-left:15px;text-align:left;padding-left:0px;">Click on the bird image for more information about the bird.</li>
 <li style="margin-left:15px;text-align:left;padding-left:0px;">Click 'REFRESH' to start over.</li>
@@ -179,7 +179,7 @@ The following instructions will help you navigate through the app and make the r
 <p style="font-weight: bold;padding-bottom:5px;text-align:left;padding-left:0px;">If you choose to <span style="color:#9355B3;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">BROWSE</span> and upload the bird-sound file (.wav format):</p>
 <ol style="padding-left:15px;">
 
-<li style="margin-left:15px;text-align:left;padding-left:0px;">Click the 'BROWSE FILE' button.</li>
+<li style="margin-left:15px;text-align:left;padding-left:0px;">Click the 'BROWSE' button.</li>
 <li style="margin-left:15px;text-align:left;padding-left:0px;">Select the bird-sound file (.wav) and click open.</li>
 <li style="margin-left:15px;text-align:left;padding-left:0px;">Click the 'PREDICT' button and wait till the file is uploaded.</li>
 <li style="margin-left:15px;text-align:left;padding-left:0px;">The type of bird will be displayed along with an image.</li>
@@ -203,7 +203,7 @@ Still have further queries? Some of the answers to these FAQs may help you clari
 <p style="font-weight: bold;padding-bottom:10px;"></p>
 <ol style="padding-left:15px;">
 <li style="font-weight: bold;padding-bottom:5px;text-align:left;">Why does it show that the recording is too small?</li>
-<p style="padding-bottom:5px;text-align:left;margin-left:0px;">WildWav currently has a 12-second limit. However, if the recording length is too short (&lt;2s), it would not be easy to analyze the recording.</p>
+<p style="padding-bottom:5px;text-align:left;margin-left:0px;">WildWav currently has a 45-second limit. However, if the recording length is too short (&lt;2s), it would not be easy to analyze the recording.</p>
 
 <p style="font-weight: bold;padding-bottom:10px;"></p>
 <li style="font-weight: bold;padding-bottom:5px;text-align:left;">Why is the application predicting the wrong bird?</li>
@@ -217,13 +217,14 @@ Still have further queries? Some of the answers to these FAQs may help you clari
 </body>
 </div>
  <div class="spacer"></div>
- <footer class="footer">
+<footer class="footer">
   <CENTER>
    <a href="https://www.wildwav.com"> <img src="https://lh3.googleusercontent.com/9H6UYO3otUiWptObzACYKwonhAh6G6vfUsmleFcFmoodE4pMWbj1HY7s5d_VrBJvsWBw46-WO4ytG1KpDnwyKKmj_5pZuzMx3gZAm0PLjqFyfKj6mDV_0xie4DLWqHRewXlDad11bQ=w2400" alt="Wild-Wav-Logo-Footer" border="0" style="width:5%;min-width: 90px; padding-bottom:0px" /> </a>
   <a href="{{ url_for('about')}}" style="color:white;text-decoration:none;font-family:Helvetica;font-size:95%; padding-bottom:10px"> | About</a>
   <a href="{{ url_for('help')}}" style="color:white;text-decoration:none;font-family:Helvetica;font-size:95%"> | Help</a>
    <a href="mailto:svpp.projects@gmail.com" style="color:white;text-decoration:none;font-family:Helvetica;font-size:95%"> | Contact</a>
-  <a href="{{ url_for('feedback')}}" style="color:white;text-decoration:none;font-family:Helvetica;font-size:95%"> | Feedback</a></CENTER>
+  <a href="{{ url_for('feedback')}}" style="color:white;text-decoration:none;font-family:Helvetica;font-size:95%"> | Feedback</a>
+    <a href="{{ url_for('privacy')}}" style="color:white;text-decoration:none;font-family:Helvetica;font-size:95%"> | Privacy Policy</a></CENTER>
 </footer>
 
 
