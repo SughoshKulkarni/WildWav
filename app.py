@@ -31,6 +31,10 @@ def about():
 def help():
     return render_template('help.html')
 
+@app.route('/privacy',methods=['GET', 'POST'])
+def privacy():
+    return render_template('privacy.html')
+
 @app.route('/feedback', methods=['GET', 'POST'])
 def feedback():
     return render_template('feedback.html')
