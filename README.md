@@ -60,6 +60,7 @@ YouTube has several videos of bird songs of varying length in time. We downloade
 | Cardinal  | 133  | YouTube video to WAV conversion |
 | Mourning Dove  | 133  | YouTube & manually created recordings |
 | Pigeon  | 133  | YouTube video to WAV conversion |
+| Blue Jay  | 132  | YouTube video to WAV conversion |
 
 ## Data preprocessing
 
@@ -120,4 +121,4 @@ Deployment was done on [Heroku](https://www.heroku.com/) with the help of [Flask
 
 ## Prediction
 
-The model is trained to detect three birds (Cardinal, Mourning Dove, and Pigeon). More birds will be added soon.
+The model is trained to detect three birds (Cardinal, Mourning Dove, Pigeon, and Blue Jay). More birds will be added soon.
