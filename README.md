@@ -53,7 +53,7 @@ You can check out the website [here](https://www.wildwav.com/ "WildWav.com"), or
 
 Data collection for this type of problem can be difficult. Fortunately, there are several websites to collect crowdsourced audio files.
 
-YouTube has several videos of bird songs of varying length in time. We downloaded the video and converted them to 5-6 seconds length audio files in WAV format. Totally 399 samples of three birds (Cardinal, Mourning dove, and Pigeon) were prepared with 133 audio samples for each bird.
+YouTube has several videos of bird songs of varying length in time. We downloaded the video and converted them to 5-6 seconds length audio files in WAV format. Totally 531 samples of four birds (Cardinal, Mourning dove, Pigeon, and Blue Jay) were prepared with 133 audio samples for each bird.
   
 | Bird  | Number of audio samples | Method of collection |
 | :-------------: | :-------------: | :-------------: |
