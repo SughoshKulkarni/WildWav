@@ -45,7 +45,7 @@ The app currently does not work on iOS devices due to security reasons.
 * JavaScript
 * Heroku
 
-You can check out the website [here](https://www.wildwav.com/ "WildWav.com"), or you can keep reading to understand more about how we built this app from getting the data to modeling and deployment process.
+You can check out the website [here](https://wildwav.herokuapp.com/ "WildWav.herokuapp.com"), or you can keep reading to understand more about how we built this app from getting the data to modeling and deployment process.
 
 ---
 
