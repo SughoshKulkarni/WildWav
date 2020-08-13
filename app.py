@@ -98,7 +98,7 @@ def predict():
                     bird_path = 'https://lh3.googleusercontent.com/8du1iStq3vN954_k-_DTD6PxEoz6JDG5URiwVqT1SlUPw62DwevItGwZw2r-5fAX3yPEmSHBNaeCnucYgwZ923NueykVt0uxH1Kf8-RS-Mn_tgXg4tW69h8K9j3n0njU8tsaYuDtAQ=w2400'        
                     bird_link = 'https://www.allaboutbirds.org/guide/Rock_Pigeon'
                 if output == 'Blue Jay':
-                    bird_path = 'https://lh3.googleusercontent.com/7E6ZjfAeeHwenJl3DDTC_Ni9aQBzbBv100VMRNjpiY-be6fzHlGaVJek1V_bhQRBVSAGSqYZaoTbj_RtZC-WjN6-x-2vnFd3UcO7YVAna9u1vkpfC5dLxk4dSOYnpbF8HK2d8WoOD19GEGwdKNQ1bPKqS7A7RMidv8oKKOa5m0CWfh69Og93eMx6EpXFTOL9AiMTlKhJjZOt-6tbw10B88qRrP2jeDp6LAWLceRVf6kvQmoXtwm487y9ol3I0spbTqCQUXa7BNL3cbXdwq1p0rIecDdCMk2gXgIGSoKr0pPH_rCmdBYkXwG5mFovgjl_129b_j6hJ3EDn6Of5YPp1wby0cC_4q2UaIxQIzQ9JBt10za2y1mTzmUK3aDeq1ZNA96ML2T_YmZ7HjTVBKyIJHFhmGBCOI5Mt6Ibd__PwCRG461WCM1N46FPEk3PevVeM_N1EmAIYp1YsQo90rXJ4jJKbhz7nRf5lpEsg6hSTM32RF4kivaZWEdxHIqACV0WOoXyOZm9OBnsYiWV3vUU1SNQFjzHXAcxJfn9c1hDm0dodO76zVCINjF6hBmjta-7rWOFc-ecD5Nep_Lwsnuz54-gbKvF3l1k6LtMcKPhBUDii_dxjrPlRhMDMK-3R7Gwu6s8e35JDP2pESMWsmNY98_LAMmICNAjCndDEGLEGE98Q_qOohd3wejNE_Nv=w2171-h1643-no?authuser=2'        
+                    bird_path = 'https://lh3.googleusercontent.com/00uRzeBJWqlqEKiG44lt7ybQ-3-mZEUHprr8GxOb9D05RJ7whkjq5SkrycZiuU5qkx0RIsIdVZcpzBS4lIngYbe1bQeqeb4t7L0IGrY5YHxyJmzPaUCfDrQauXqRhab5No5VnbfZ8Q=w2400'        
                     bird_link = 'https://www.allaboutbirds.org/guide/Blue_Jay'
                 flash("It's a {}! ({:.2f}% probability)".format(output,max_prob*100), "info")
                 return render_template('index.html', bird = bird_path, birdlink = bird_link, birdmore = bird_more)
@@ -128,7 +128,7 @@ def predict():
                 bird_path = 'https://lh3.googleusercontent.com/8du1iStq3vN954_k-_DTD6PxEoz6JDG5URiwVqT1SlUPw62DwevItGwZw2r-5fAX3yPEmSHBNaeCnucYgwZ923NueykVt0uxH1Kf8-RS-Mn_tgXg4tW69h8K9j3n0njU8tsaYuDtAQ=w2400'        
                 bird_link = 'https://www.allaboutbirds.org/guide/Rock_Pigeon'
             if output == 'Blue Jay':
-                bird_path = 'https://lh3.googleusercontent.com/7E6ZjfAeeHwenJl3DDTC_Ni9aQBzbBv100VMRNjpiY-be6fzHlGaVJek1V_bhQRBVSAGSqYZaoTbj_RtZC-WjN6-x-2vnFd3UcO7YVAna9u1vkpfC5dLxk4dSOYnpbF8HK2d8WoOD19GEGwdKNQ1bPKqS7A7RMidv8oKKOa5m0CWfh69Og93eMx6EpXFTOL9AiMTlKhJjZOt-6tbw10B88qRrP2jeDp6LAWLceRVf6kvQmoXtwm487y9ol3I0spbTqCQUXa7BNL3cbXdwq1p0rIecDdCMk2gXgIGSoKr0pPH_rCmdBYkXwG5mFovgjl_129b_j6hJ3EDn6Of5YPp1wby0cC_4q2UaIxQIzQ9JBt10za2y1mTzmUK3aDeq1ZNA96ML2T_YmZ7HjTVBKyIJHFhmGBCOI5Mt6Ibd__PwCRG461WCM1N46FPEk3PevVeM_N1EmAIYp1YsQo90rXJ4jJKbhz7nRf5lpEsg6hSTM32RF4kivaZWEdxHIqACV0WOoXyOZm9OBnsYiWV3vUU1SNQFjzHXAcxJfn9c1hDm0dodO76zVCINjF6hBmjta-7rWOFc-ecD5Nep_Lwsnuz54-gbKvF3l1k6LtMcKPhBUDii_dxjrPlRhMDMK-3R7Gwu6s8e35JDP2pESMWsmNY98_LAMmICNAjCndDEGLEGE98Q_qOohd3wejNE_Nv=w2171-h1643-no?authuser=2'        
+                bird_path = 'https://lh3.googleusercontent.com/00uRzeBJWqlqEKiG44lt7ybQ-3-mZEUHprr8GxOb9D05RJ7whkjq5SkrycZiuU5qkx0RIsIdVZcpzBS4lIngYbe1bQeqeb4t7L0IGrY5YHxyJmzPaUCfDrQauXqRhab5No5VnbfZ8Q=w2400'        
                 bird_link = 'https://www.allaboutbirds.org/guide/Blue_Jay'
             flash("It's a {}! ({:.2f}% probability)".format(output,max_prob*100), "info")
             return render_template('index.html', bird = bird_path, birdlink = bird_link, birdmore = bird_more)
