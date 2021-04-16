@@ -18,7 +18,7 @@ model = pickle.load(open('Bird Predictor_neural_v4.pkl', 'rb'))
 def index():
     ip_address = ip_address = urllib.request.urlopen('https://ident.me').read().decode('utf8').replace(':','')
     bird_path = ''
-    print('This is the IP:)
+    print('This is the IP:')
     print(request.remote_addr)
     if Path('tmp/audio'+ip_address+'.wav').is_file():
         Path('tmp/audio'+ip_address+'.wav').unlink()
