@@ -26,7 +26,7 @@ scikit-learn==0.22.2.post1
 scipy==1.4.1
 six==1.14.0
 SoundFile==0.10.3.post1
-Werkzeug==1.0.0
+Werkzeug==2.2.3
 wincertstore==0.2
 pandas==1.0.1
 pathlib==1.0.1
