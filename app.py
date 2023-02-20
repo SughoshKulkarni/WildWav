@@ -12,7 +12,7 @@ ALLOWED_EXTENSIONS = {'wav'}
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024
 app.secret_key = "VaishSughosh%$1234"
-model = pickle.load(open('Bird Predictor_neural.pkl', 'rb'))
+model = pickle.load(open('Bird Predictor_neural_v4.pkl', 'rb'))
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
